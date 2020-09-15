@@ -13,4 +13,4 @@ Lab code and instructions for the Speech and language Processing course in the N
 
 # Lab support and questions
 
-We will use this repo's issues for tracking questions to the TAs
+We will use this repo's issues for tracking questions to the TAs. See [LAB-SUPPORT.md](LAB-SUPPORT.md) for the instructions and code of conduct 
