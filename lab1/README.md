@@ -27,22 +27,22 @@ This script downloads and preprocesses the corpus.
 
 We propose the following structure to organize your code.
 
-├── data                     # -> Train and test corpora
-│   ├── spell\_test.txt      # -> spell checker evaluation corpus
-│   └── wiki.txt             # -> Wikipedial word misspellings
-├── fsts                     # -> Compiled FSTs and FST description files
-├── install\_openfst.sh      # -> OpenFST installation script
-├── README.md                # -> This file.
-├── requirements.txt         # -> Python dependencies
-├── scripts                  # -> Python and Bash scripts go here
-│   ├── fetch\_gutenberg.py  # -> Provided script to download the gutenberg corpus
-│   ├── helpers.py           # -> Provided helper functions
-│   ├── mkfstinput.py        # -> Provided script to pass a word as input to the spell checker
-│   ├── predict.sh           # -> Provided script to run prediction for a word
-│   ├── run\_evaluation.py   # -> Provided script to run evaluation on the test corpus
-│   ├── util.py              # -> Stubs to fill in some of your utility functions. TODO
-│   └── word\_edits.sh       # -> Provided script to get the minimum edit distance edits between two words
-└── vocab
+├── data                     # -> Train and test corpora  
+│   ├── spell\_test.txt      # -> spell checker evaluation corpus  
+│   └── wiki.txt             # -> Wikipedial word misspellings  
+├── fsts                     # -> Compiled FSTs and FST description files  
+├── install\_openfst.sh      # -> OpenFST installation script  
+├── README.md                # -> This file.  
+├── requirements.txt         # -> Python dependencies  
+├── scripts                  # -> Python and Bash scripts go here  
+│   ├── fetch\_gutenberg.py  # -> Provided script to download the gutenberg corpus  
+│   ├── helpers.py           # -> Provided helper functions  
+│   ├── mkfstinput.py        # -> Provided script to pass a word as input to the spell checker  
+│   ├── predict.sh           # -> Provided script to run prediction for a word  
+│   ├── run\_evaluation.py   # -> Provided script to run evaluation on the test corpus  
+│   ├── util.py              # -> Stubs to fill in some of your utility functions. TODO  
+│   └── word\_edits.sh       # -> Provided script to get the minimum edit distance edits between two words  
+└── vocab  
 
 We also propose to use the `.fst` suffix for fst description files and the `.binfst` suffix for compiled fsts.
 
