@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+lab1/data/gutenberg.txt
 *.p
 *.pkl
 *.pickle
