@@ -42,7 +42,7 @@ We propose the following structure to organize your code.
 │   ├── run\_evaluation.py   # -> Provided script to run evaluation on the test corpus  
 │   ├── util.py              # -> Stubs to fill in some of your utility functions. TODO  
 │   └── word\_edits.sh       # -> Provided script to get the minimum edit distance edits between two words  
-└── vocab  
+└── vocab                    # -> Place your vocab and syms files here
 
 We also propose to use the `.fst` suffix for fst description files and the `.binfst` suffix for compiled fsts.
 
