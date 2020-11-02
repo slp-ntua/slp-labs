@@ -29,13 +29,13 @@ python mkfstinput.py ${WORD} |
     # Get shortest path and sort arcs
     fstshortestpath |
     fstrmepsilon |
-    fsttopshort |
+    fsttopsort |
     # print output fst using words.syms
     fstprint -osymbols=${WORDSYMS} |
     # Get destination word (corrected)
     cut -f4 |
     # Ignore epsilon outputs
-    grep -v "<eps>"
+    grep -v "<eps>" |
     # Ignore accepting state line
     head -n -1 |
     # Remove trailing new line
