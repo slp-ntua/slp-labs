@@ -1,0 +1,4 @@
+# Pytorch - Kaldi DNN
+
+You need to implement the Unimplemented functions in `timit_dnn.py` and `extract_posteriors.py`.
+Then modify and execute the `run_dnn.sh` script for DNN-HMM decoding.
