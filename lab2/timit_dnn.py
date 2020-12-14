@@ -41,7 +41,7 @@ def train(model, criterion, optimizer, train_loader, dev_loader, epochs=50, pati
     the best validation loss
     """
     # TODO: IMPLEMENT THIS FUNCTION
-    pass
+    raise NotImplementedError
 
 
 trainset = TorchSpeechDataset('./', TRAIN_ALIGNMENT_DIR, 'train')
