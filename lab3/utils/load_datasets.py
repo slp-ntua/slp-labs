@@ -39,7 +39,7 @@ def parse_file(file):
 
     data = {}
     lines = open(file, "r", encoding="utf-8").readlines()
-    for line_id, line in enumerate(lines):
+    for _, line in enumerate(lines):
         columns = line.rstrip().split(SEPARATOR)
         tweet_id = columns[0]
         sentiment = columns[1]
@@ -68,27 +68,6 @@ def load_Semeval2017A():
     y_train = [x[0] for x in train]
     X_test = [x[1] for x in test]
     y_test = [x[0] for x in test]
-
-    return X_train, y_train, X_test, y_test
-
-
-def load_MR():
-    pos = open(os.path.join(DATA_PATH, "MR/rt-polarity.pos")).readlines()
-    neg = open(os.path.join(DATA_PATH, "MR/rt-polarity.neg")).readlines()
-
-    pos = [x.strip() for x in pos]
-    neg = [x.strip() for x in neg]
-
-    pos_labels = ["positive"] * len(pos)
-    neg_labels = ["negative"] * len(neg)
-
-    split = 5000
-
-    X_train = pos[:split] + neg[:split]
-    y_train = pos_labels[:split] + neg_labels[:split]
-
-    X_test = pos[split:] + neg[split:]
-    y_test = pos_labels[split:] + neg_labels[split:]
 
     return X_train, y_train, X_test, y_test
 

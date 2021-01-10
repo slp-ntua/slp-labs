@@ -7,7 +7,7 @@ import numpy
 
 def file_cache_name(file):
     head, tail = os.path.split(file)
-    filename, ext = os.path.splitext(tail)
+    filename, _ = os.path.splitext(tail)
     return os.path.join(head, filename + ".p")
 
 
