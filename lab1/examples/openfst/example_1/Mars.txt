@@ -1,0 +1,5 @@
+0 1 M Mars
+1 2 a <epsilon>
+2 3 r <epsilon>
+3 4 s <epsilon>
+4

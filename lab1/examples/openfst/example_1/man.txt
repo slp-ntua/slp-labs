@@ -1,0 +1,4 @@
+0 1 m man
+1 2 a <epsilon>
+2 3 n <epsilon>
+3

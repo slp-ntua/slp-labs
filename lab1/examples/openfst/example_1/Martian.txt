@@ -1,0 +1,8 @@
+0 1 M Martian
+1 2 a <epsilon>
+2 3 r <epsilon>
+3 4 t <epsilon>
+4 5 i <epsilon>
+5 6 a <epsilon>
+6 7 n <epsilon>
+7
