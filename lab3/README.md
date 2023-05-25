@@ -1,4 +1,4 @@
-# LAB 3: Sentiment analysis using LSTM attention networks
+# LAB 3: Sentiment analysis using NLP models
 
 ## Prerequisites
 The project requires **Python 3**.
