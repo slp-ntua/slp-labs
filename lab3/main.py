@@ -62,7 +62,7 @@ n_classes = ...  # EX1 - LabelEncoder.classes_.size
 train_set = SentenceDataset(X_train, y_train, word2idx)
 test_set = SentenceDataset(X_test, y_test, word2idx)
 
-# EX4 - Define our PyTorch-based DataLoader
+# EX7 - Define our PyTorch-based DataLoader
 train_loader = ...  # EX7
 test_loader = ...  # EX7
 
