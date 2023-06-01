@@ -142,7 +142,7 @@ class TransformerEncoderModel(nn.Module):
         super().__init__()
 
         # TODO: Main-Lab-Q5 - define the model
-        # Hint: it will be similar to `MultiHeadAttentionModel` but instead now
+        # Hint: it will be similar to `MultiHeadAttentionModel` but now
         # there are blocks of MultiHeadAttention modules as defined below
         ...
 
