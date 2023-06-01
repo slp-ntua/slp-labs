@@ -106,12 +106,54 @@ class MultiHeadAttentionModel(nn.Module):
 
     def __init__(self, output_size, embeddings, max_length=60, n_head=3):
         super().__init__()
-        
+
         # TODO: Main-Lab-Q4 - define the model
         # Hint: it will be similar to `SimpleSelfAttentionModel` but
-        # `MultiHeadAttention` will be utilized for the self-attention module here        
+        # `MultiHeadAttention` will be utilized for the self-attention module here
         ...
 
+    def forward(self, x):
+        ...
+
+        logits = ...
+        return logits
+
+
+class Block(nn.Module):
+    """ Transformer block: communication followed by computation """
+
+    def __init__(self, n_head, head_size, n_embd):
+        # n_embd: embedding dimension, n_head: the number of heads we'd like
+        super().__init__()
+        head_size = n_embd // n_head
+        self.sa = MultiHeadAttention(n_head, head_size, n_embd)
+        self.ffwd = FeedFoward(n_embd)
+        self.ln1 = nn.LayerNorm(n_embd)
+        self.ln2 = nn.LayerNorm(n_embd)
+
+    def forward(self, x):
+        x = x + self.sa(self.ln1(x))
+        x = x + self.ffwd(self.ln2(x))
+        return x
+
+
+class TransformerEncoderModel(nn.Module):
+    def __init__(self, output_size, embeddings, max_length=60, n_head=3, n_layer=3):
+        super().__init__()
+
+        # TODO: Main-Lab-Q5 - define the model
+        # Hint: it will be similar to `MultiHeadAttentionModel` but instead now
+        # there are blocks of MultiHeadAttention modules as defined below
+        ...
+
+        num_embeddings, dim = ...
+
+        head_size = dim // self.n_head
+        self.blocks = nn.Sequential(
+            *[Block(n_head, head_size, dim) for _ in range(n_layer)])
+        self.ln_f = nn.LayerNorm(dim)  # final layer norm
+
+        self.output = ...
 
     def forward(self, x):
         ...
