@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, SubsetRandomSampler
+from sklearn.metrics import f1_score, accuracy_score, recall_score
 
 
 def progress(loss, epoch, batch, batch_size, dataset_size):
@@ -133,3 +134,13 @@ def torch_train_val_split(
     val_loader = DataLoader(
         dataset, batch_size=batch_eval, sampler=val_sampler)
     return train_loader, val_loader
+
+
+def get_metrics_report(y, y_hat):
+    # Convert values to lists
+    y = np.concatenate(y, axis=0)
+    y_hat = np.concatenate(y_hat, axis=0)
+    # report metrics
+    report = f'  accuracy: {accuracy_score(y, y_hat)}\n  recall: ' + \
+        f'{recall_score(y, y_hat, average="macro")}\n  f1-score: {f1_score(y, y_hat,average="macro")}'
+    return report
