@@ -1,7 +1,8 @@
 import math
 import sys
-
+import numpy as np
 import torch
+from torch.utils.data import DataLoader, SubsetRandomSampler
 
 
 def progress(loss, epoch, batch, batch_size, dataset_size):
@@ -108,3 +109,27 @@ def eval_dataset(dataloader, model, loss_function):
             running_loss += loss.data.item()
 
     return running_loss / index, (y_pred, y)
+
+
+def torch_train_val_split(
+    dataset, batch_train, batch_eval, val_size=0.2, shuffle=True, seed=420
+):
+    # Creating data indices for training and validation splits:
+    dataset_size = len(dataset)
+    indices = list(range(dataset_size))
+    val_split = int(np.floor(val_size * dataset_size))
+    if shuffle:
+        np.random.seed(seed)
+        np.random.shuffle(indices)
+    train_indices = indices[val_split:]
+    val_indices = indices[:val_split]
+
+    # Creating PT data samplers and loaders:
+    train_sampler = SubsetRandomSampler(train_indices)
+    val_sampler = SubsetRandomSampler(val_indices)
+
+    train_loader = DataLoader(
+        dataset, batch_size=batch_train, sampler=train_sampler)
+    val_loader = DataLoader(
+        dataset, batch_size=batch_eval, sampler=val_sampler)
+    return train_loader, val_loader
